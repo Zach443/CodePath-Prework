@@ -13,7 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //Register the default tipping values, if not previously set by the user
+        let defaults = UserDefaults.standard
+        defaults.register(
+            defaults: [
+                "lowTip": "15%",
+                "midTip": "20%",
+                "highTip": "25%"
+            ]
+        )
+        
+        
         return true
     }
 
